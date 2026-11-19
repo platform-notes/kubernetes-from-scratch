@@ -50,7 +50,7 @@ Confirm the context and API server match the environment you just created. Stop 
 | `deployment.yaml` | declares three replicas, the update strategy and a readiness probe |
 | `service.yaml` | provides a stable address for the selected Pods |
 
-The Deployment pins NGINX to a multi-architecture OCI digest so the lab pulls the same image for a given platform even if the tag moves. The tag identifies the NGINX release.
+The Deployment uses the non-root `nginxinc/nginx-unprivileged:1.28-alpine` image, pinned to a multi-architecture OCI digest, listening on container port 8080. The Service still exposes port 80 through the named `http` target port. The Pod runs as UID/GID 101, blocks privilege escalation and ServiceAccount token automounting, drops all Linux capabilities, uses RuntimeDefault seccomp and a read-only root filesystem with a writable `/tmp` (`emptyDir`). Requests: 10m CPU/32Mi; limits: 100m CPU/64Mi.
 
 ## 1. Create the initial version
 
@@ -90,7 +90,7 @@ curl -I http://localhost:8080
 
 ## 2. Observe a controlled rollout
 
-Change an environment variable in the Pod template. The NGINX application doesn't use this variable; it exists to demonstrate a declarative change that creates a new revision without depending on a specific image tag.
+Change an environment variable in the Pod template. The NGINX application doesn't use this variable; it exists to demonstrate a declarative change that creates a new revision without depending on a second image tag.
 
 ```bash
 kubectl --context="${LAB_CONTEXT:?Verify and set LAB_CONTEXT first}" -n lab-rollout set env deployment/web RELEASE_MESSAGE=v2
