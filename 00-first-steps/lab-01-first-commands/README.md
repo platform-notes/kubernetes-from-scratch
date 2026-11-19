@@ -146,6 +146,10 @@ Confirm the removal:
 kubectl --context="${LAB_CONTEXT:?Verify and set LAB_CONTEXT first}" -n lab-first-commands get pods
 ```
 
+## Why the securityContext?
+
+Even a first Pod follows safe defaults. The image is pinned by OCI digest, so it can't change silently. The Pod runs as the unprivileged `nobody` user (UID/GID 65534), uses the RuntimeDefault seccomp profile and has no ServiceAccount token, because it never calls the Kubernetes API. The container can't escalate privileges, drops all Linux capabilities and has a read-only root filesystem. Requests and limits bound its CPU and memory use.
+
 ## Optional challenge
 
 Run this before the final namespace cleanup.
