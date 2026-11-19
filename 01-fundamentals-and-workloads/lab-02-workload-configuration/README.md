@@ -6,7 +6,7 @@ This lab practices configuration of workloads and troubleshooting with Pod condi
 
 ## Environment
 
-Open the [Killercoda Kubernetes playground](https://killercoda.com/playgrounds/scenario/kubernetes). Use only a disposable cluster with permission to create namespaces. The Secret contains a fictional value for this exercise. Kubernetes Secret manifests can expose their values to anyone who can read the file.
+Open the [Killercoda Kubernetes playground](https://killercoda.com/playgrounds/scenario/kubernetes). Use only a disposable cluster with permission to create namespaces. The Secret contains a fictional value for this exercise. The image is `nginxinc/nginx-unprivileged:1.28-alpine`, pinned by OCI digest, on container port 8080; the Service still exposes port 80 through the named `http` port. Kubernetes Secret manifests can expose their values to anyone who can read the file.
 
 In the playground terminal, clone the repository and enter the lab directory:
 
@@ -69,3 +69,7 @@ Compare the recovered name, UID, and restart count with the baseline. All three 
 kubectl delete namespace lab-workload-config --wait=true --timeout=120s
 kubectl get namespace lab-workload-config --ignore-not-found
 ```
+
+## Why the securityContext?
+
+The example disables ServiceAccount token automounting because the web workload never calls the Kubernetes API. `runAsNonRoot` plus UID/GID 101 prevent root execution; `RuntimeDefault` seccomp limits syscalls; dropping all capabilities and blocking privilege escalation reduce container privileges. A read-only root filesystem limits accidental changes, while an `emptyDir` mounted at `/tmp` holds nginx runtime files. Requests (10m CPU/32Mi) and limits (100m CPU/64Mi) bound resource use. The `grep`-based readiness probe is unchanged: the Ready → NotReady → Ready sequence preserves the Pod UID with zero restarts.

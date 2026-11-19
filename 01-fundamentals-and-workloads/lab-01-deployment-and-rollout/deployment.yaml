@@ -22,12 +22,34 @@ spec:
       labels:
         app.kubernetes.io/name: web
     spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: web
-          image: nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+          image: nginxinc/nginx-unprivileged:1.28-alpine@sha256:7377697a821c131a924a7105fafbe7414db4e9fcc77a6f08f776f33f141ec3f8
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+          volumeMounts:
+            - name: writable-tmp
+              mountPath: /tmp
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
           env:
             - name: RELEASE_MESSAGE
               value: "v1"
@@ -37,3 +59,6 @@ spec:
               port: http
             initialDelaySeconds: 3
             periodSeconds: 5
+      volumes:
+        - name: writable-tmp
+          emptyDir: {}
