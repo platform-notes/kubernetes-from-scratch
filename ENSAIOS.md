@@ -38,4 +38,4 @@ If you're trying to evolve from operations to Platform Engineering — or from P
 
 ---
 
-*Full version also published on [Medium](https://medium.com/@rogeroliveira86) and [DEV.to](https://dev.to/platform-notes). Technical track: see [`00-linux-for-platform-engineering`](./00-linux-for-platform-engineering) onward.*
+*Full version also published on [DEV.to](https://dev.to/platform-notes). Technical track: see [`00-linux-for-platform-engineering`](./00-linux-for-platform-engineering) onward.*
