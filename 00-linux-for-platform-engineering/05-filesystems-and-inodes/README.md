@@ -1,7 +1,7 @@
 # 05 — Filesystems and Inodes
 
 > Part of the **Linux From Scratch** track (piece #5: *Filesystems and inodes*).
-> Full article: [DEV.to](https://dev.to/rogeroliveira86/-linux-from-zero-inodes-and-the-filesystem-limit-df-h-doesnt-show-for-platform-engineers-4jml)
+> Full article: [DEV.to](https://dev.to/platform-notes/-linux-from-zero-inodes-and-the-filesystem-limit-df-h-doesnt-show-for-platform-engineers-4jml)
 
 ## Objective
 
@@ -84,4 +84,4 @@ The examples are educational. Confirm behavior, version and permissions in the e
 
 ---
 
-*Linux From Scratch series — [Roger Oliveira](https://www.linkedin.com/in/oliveiraroger/). Repository: [kubernetes-from-scratch](https://github.com/platform-notes/kubernetes-from-scratch).*
+*Linux From Scratch series — Platform Notes. Repository: [kubernetes-from-scratch](https://github.com/platform-notes/kubernetes-from-scratch).*
