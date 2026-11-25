@@ -11,7 +11,7 @@ Open the [Killercoda Kubernetes playground](https://killercoda.com/playgrounds/s
 In the playground terminal, clone the repository and enter the lab directory:
 
 ```bash
-git clone https://github.com/roger-oliveira86/kubernetes-from-scratch.git
+git clone https://github.com/platform-notes/kubernetes-from-scratch.git
 cd kubernetes-from-scratch/01-fundamentals-and-workloads/lab-02-workload-configuration
 test -f workload.yaml
 git rev-parse HEAD
