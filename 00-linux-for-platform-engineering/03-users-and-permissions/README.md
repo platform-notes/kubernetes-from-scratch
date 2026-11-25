@@ -26,7 +26,7 @@ The kernel doesn't know usernames. It knows numbers.
 
 ```bash
 id
-# uid=1000(roger) gid=1000(roger) groups=1000(roger),27(sudo),999(docker)
+# uid=1000(platform) gid=1000(platform) groups=1000(platform),27(sudo),999(docker)
 ```
 
 Where the mappings live:
@@ -40,7 +40,7 @@ Where the mappings live:
 `/etc/passwd` format:
 
 ```
-roger:x:1000:1000:Roger Oliveira:/home/roger:/bin/bash
+platform:x:1000:1000:Platform Notes:/home/platform:/bin/bash
 name:password:UID:GID:comment:home:shell
 ```
 

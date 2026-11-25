@@ -42,7 +42,7 @@ Linux kernel namespaces (the subject of the next chapter) isolate exactly these 
 
 ## Full article
 
-Read the full narrative version of this chapter in [`ARTIGO-linux-do-zero-02.md`](./ARTIGO-linux-do-zero-02.md), also published on [Medium](https://medium.com/@rogeroliveira86) and [DEV.to](https://dev.to/rogeroliveira86).
+Read the full narrative version of this chapter in [`ARTIGO-linux-do-zero-02.md`](./ARTIGO-linux-do-zero-02.md), also published on [Medium](https://medium.com/@rogeroliveira86) and [DEV.to](https://dev.to/platform-notes).
 
 ## Next chapter
 

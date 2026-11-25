@@ -88,6 +88,6 @@ Suggestions and corrections are welcome. Read [CONTRIBUTING.md](./CONTRIBUTING.m
 
 ## Author
 
-**Roger Oliveira** — Platform Engineering, SRE, Kubernetes and Observability. 12+ years in infrastructure, with technical leadership of platform migrations in a regulated environment.
+**Platform Notes** — Platform Engineering, SRE, Kubernetes and Observability.
 
-[LinkedIn](https://www.linkedin.com/in/oliveiraroger/) · [DEV.to](https://dev.to/rogeroliveira86)
+[DEV.to](https://dev.to/platform-notes)

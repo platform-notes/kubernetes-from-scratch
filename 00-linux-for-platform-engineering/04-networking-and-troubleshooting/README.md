@@ -1,7 +1,7 @@
 # 04 — Networking and Troubleshooting
 
 > Part of the **Linux From Scratch** track (piece #3: *Networking, DNS, ports and sockets*).
-> Full article on [DEV.to](https://dev.to/rogeroliveira86/linux-from-zero-networking-dns-ports-and-sockets-for-platform-engineers-240h)
+> Full article on [DEV.to](https://dev.to/platform-notes/linux-from-zero-networking-dns-ports-and-sockets-for-platform-engineers-240h)
 
 ## Objective
 
@@ -75,4 +75,4 @@ Recommended order for investigating "can't connect", always by evidence, never b
 
 ---
 
-*Linux From Scratch series — [Roger Oliveira](https://www.linkedin.com/in/oliveiraroger/). Repository: [kubernetes-from-scratch](https://github.com/platform-notes/kubernetes-from-scratch).*
+*Linux From Scratch series — Platform Notes. Repository: [kubernetes-from-scratch](https://github.com/platform-notes/kubernetes-from-scratch).*
